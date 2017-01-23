@@ -1,0 +1,35 @@
+{
+  "name": "node-red-contrib-princip-ffmpeg",
+  "version": "0.0.5",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShamatienkoYaroslav/node-red-contrib-princip-ffmpeg.git"
+  },
+  "keywords": [
+    "node-red",
+    "ffmpeg",
+    "buffer"
+  ],
+  "node-red": {
+    "nodes": {
+      "princip-ffmpeg-params-setup": "./nodes/params-setup/index.js",
+      "princip-ffmpeg-start-process": "./nodes/start-process/index.js",
+      "princip-ffmpeg-end-process": "./nodes/end-process/index.js",
+      "princip-ffmpeg-thumbnail": "./nodes/thumbnail/index.js",
+      "princip-ffmpeg-thumbnail-params-setup": "./nodes/thumbnail-params-setup/index.js"
+    }
+  },
+  "author": "Yaroslav <shamatienko.yaroslav@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShamatienkoYaroslav/node-red-contrib-princip-ffmpeg/issues"
+  },
+  "homepage": "https://github.com/ShamatienkoYaroslav/node-red-contrib-princip-ffmpeg#readme",
+  "dependencies": {
+    "princip-ffmpeg-stream-to-buffer": "0.0.7"
+  }
+}

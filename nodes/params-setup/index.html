@@ -1,0 +1,54 @@
+<script type="text/javascript">
+    RED.nodes.registerType('princip-ffmpeg-params-setup', {
+      category: 'config',
+      defaults: {
+        inputFormat: {value: undefined},
+        inputFramerate: {value: 30, required: true, validate: RED.validators.number()},
+        inputParamsString: {value: undefined},
+        inputSource: {value: undefined, required: true},
+        outputPixFormat: {value: "rgb8", required: true},
+        outputFormat: {value: "gif", required: true},
+        outputParamsString: {value: undefined}
+      },
+      label: function() {
+        return `${this.inputSource} ${this.outputPixFormat} ${this.outputFormat}`;
+      }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="princip-ffmpeg-params-setup">
+    <div class="form-row">
+        <label for="node-config-input-inputFormat"><i class="fa fa-tag"></i> Input format</label>
+        <input type="text" id="node-config-input-inputFormat" placeholder="Input format">
+    </div>
+
+    <div class="form-row">
+        <label for="node-config-input-inputFramerate"><i class="fa fa-tag"></i> Input framerate</label>
+        <input type="text" id="node-config-input-inputFramerate" placeholder="Input framerate">
+    </div>
+
+    <div class="form-row">
+        <label for="node-config-input-inputParamsString"><i class="fa fa-tag"></i> Input params</label>
+        <input type="text" id="node-config-input-inputParamsString" placeholder="Input params">
+    </div>
+
+    <div class="form-row">
+        <label for="node-config-input-inputSource"><i class="fa fa-tag"></i> Input source</label>
+        <input type="text" id="node-config-input-inputSource" placeholder="Input source">
+    </div>
+
+    <div class="form-row">
+        <label for="node-config-input-outputPixFormat"><i class="fa fa-tag"></i> Output pix format</label>
+        <input type="text" id="node-config-input-outputPixFormat" placeholder="Output pix format">
+    </div>
+
+    <div class="form-row">
+        <label for="node-config-input-outputFormat"><i class="fa fa-tag"></i> Output format</label>
+        <input type="text" id="node-config-input-outputFormat" placeholder="Output format">
+    </div>
+
+    <div class="form-row">
+        <label for="node-config-input-outputParamsString"><i class="fa fa-tag"></i> Output params</label>
+        <input type="text" id="node-config-input-outputParamsString" placeholder="Output params">
+    </div>
+</script>
