@@ -21,21 +21,16 @@ module.exports = function(RED) {
         return;
       }
 
-      var processes = node.context().global.get('princip-ffmpeg-processes') || [];
-      for (var index in processes) {
-        var rec = processes[index];
-        if (rec.params.inputSource == node.params.inputSource) {
-          utils.killChildProcess(node, rec.proc);
-        }
-      }
+      var processes = utils.getProcesses(node);
 
       try {
         var proc = pfstb.stream(node.params);
         processes.push({params: node.params, proc: proc});
-        node.context().global.set('princip-ffmpeg-processes', processes);
       } catch(err) {
         node.error(`Can\'t create process for input source ${node.params.inputSource}. Details: ${err}`);
       }
+
+      utils.setProcesses(node, processes);
     });
   }
 

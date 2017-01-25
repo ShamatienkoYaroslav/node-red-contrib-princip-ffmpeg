@@ -27,7 +27,7 @@ module.exports = function(RED) {
         }
       }
 
-      node.context().global.set('princip-ffmpeg-processes', processes);
+      utils.setProcesses(node, processes);
     });
   }
 

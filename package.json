@@ -20,7 +20,9 @@
       "princip-ffmpeg-start-process": "./nodes/start-process/index.js",
       "princip-ffmpeg-end-process": "./nodes/end-process/index.js",
       "princip-ffmpeg-thumbnail": "./nodes/thumbnail/index.js",
-      "princip-ffmpeg-thumbnail-params-setup": "./nodes/thumbnail-params-setup/index.js"
+      "princip-ffmpeg-thumbnail-params-setup": "./nodes/thumbnail-params-setup/index.js",
+      "princip-ffmpeg-conver-to-gif": "./nodes/convert-to-gif/index.js",
+      "princip-ffmpeg-conver-to-gif-params-setup": "./nodes/convert-to-gif-params-setup/index.js"
     }
   },
   "author": "Yaroslav <shamatienko.yaroslav@gmail.com>",

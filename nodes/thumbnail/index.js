@@ -21,18 +21,13 @@ module.exports = function(RED) {
         return;
       }
 
-      var processes = node.context().global.get('princip-ffmpeg-processes') || [];
-      for (var index in processes) {
-        var rec = processes[index];
-        if (rec.params.inputSource == node.params.inputSource) {
-          utils.killChildProcess(node, rec.proc);
-          processes.splice(index, 1);
-        }
-      }
+      var processes = utils.getProcesses(node);
 
       node.params.outputFormat = 'image2pipe';
       node.params.outputParamsString = (!node.params.outputParamsString) ? '-frames 1' : node.params.outputParamsString + ' ' + '-frames 1';
       node.params.onProcessClose = function(buffer) {
+        var processes = utils.getProcesses(node);
+        utils.setProcesses(node, processes);
         node.send({payload: buffer});
       }
 
@@ -40,10 +35,9 @@ module.exports = function(RED) {
         var proc = pfstb.stream(node.params);
         processes.push({params: node.params, proc: proc});
       } catch(err) {
+        utils.setProcesses(node, processes);
         node.error(`Can\'t create process for input source ${node.params.inputSource}. Details: ${err}`);
       }
-
-      node.context().global.set('princip-ffmpeg-processes', processes);
     });
   }
 

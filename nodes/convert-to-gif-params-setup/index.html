@@ -1,0 +1,42 @@
+<script type="text/javascript">
+    RED.nodes.registerType('princip-ffmpeg-conver-to-gif-params-setup', {
+      category: 'config',
+      defaults: {
+        inputParamsString: {value: undefined},
+        inputSource: {value: undefined},
+        outputPixFormat: {value: "rgb8"},
+        outputParamsString: {value: undefined},
+        speed: {value: 6, validate: RED.validators.number()}
+      },
+      label: function() {
+        return `${this.inputSource} ${this.outputPixFormat} ${this.speed}`;
+      }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="princip-ffmpeg-conver-to-gif-params-setup">
+    <div class="form-row">
+        <label for="node-config-input-inputSource"><i class="fa fa-tag"></i> Input source</label>
+        <input type="text" id="node-config-input-inputSource" placeholder="Input source">
+    </div>
+
+    <div class="form-row">
+        <label for="node-config-input-inputParamsString"><i class="fa fa-tag"></i> Input params</label>
+        <input type="text" id="node-config-input-inputParamsString" placeholder="Input params">
+    </div>
+
+    <div class="form-row">
+        <label for="node-config-input-outputPixFormat"><i class="fa fa-tag"></i> Output pix format</label>
+        <input type="text" id="node-config-input-outputPixFormat" placeholder="Output pix format">
+    </div>
+
+    <div class="form-row">
+        <label for="node-config-input-outputParamsString"><i class="fa fa-tag"></i> Output params</label>
+        <input type="text" id="node-config-input-outputParamsString" placeholder="Output params">
+    </div>
+
+    <div class="form-row">
+        <label for="node-config-input-speed"><i class="fa fa-tag"></i> Output speed</label>
+        <input type="text" id="node-config-input-speed" placeholder="Output speed">
+    </div>
+</script>
