@@ -6,7 +6,6 @@ module.exports = function(RED) {
 
     this.inputParamsString = config.inputParamsString || '';
     this.inputSource = config.inputSource;
-    this.outputPixFormat = config.outputPixFormat || 'rgb8';
     this.outputParamsString = config.outputParamsString || '';
     this.speed = config.speed || '5.0';
   }

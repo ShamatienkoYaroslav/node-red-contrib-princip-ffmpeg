@@ -3,13 +3,13 @@
       category: 'config',
       defaults: {
         inputFormat: {value: undefined},
-        inputFramerate: {value: 30, required: true, validate: RED.validators.number()},
         inputParamsString: {value: undefined},
         inputSource: {value: undefined, required: true},
         outputParamsString: {value: undefined}
       },
       label: function() {
-        return `${this.inputSource} ${this.inputFormat} ${this.inputFramerate}`;
+        var inputFormat = (this.inputFormat) ? `-f ${this.inputFormat}` : '';
+        return `${inputFormat} ${this.inputParamsString} ${this.inputSource} ${this.outputParamsString}`;
       }
     });
 </script>
@@ -18,11 +18,6 @@
     <div class="form-row">
         <label for="node-config-input-inputFormat"><i class="fa fa-tag"></i> Input format</label>
         <input type="text" id="node-config-input-inputFormat" placeholder="Input format">
-    </div>
-
-    <div class="form-row">
-        <label for="node-config-input-inputFramerate"><i class="fa fa-tag"></i> Input framerate</label>
-        <input type="text" id="node-config-input-inputFramerate" placeholder="Input framerate">
     </div>
 
     <div class="form-row">
@@ -39,4 +34,6 @@
         <label for="node-config-input-outputParamsString"><i class="fa fa-tag"></i> Output params</label>
         <input type="text" id="node-config-input-outputParamsString" placeholder="Output params">
     </div>
+
+    <div class="form-tips"><b>Example:</b> Input format: 'rstp', Input params: '-ss 20', Input source: 'rtsp://media.smart-streaming.com/mytest/mp4:sample.mp4'</div>
 </script>

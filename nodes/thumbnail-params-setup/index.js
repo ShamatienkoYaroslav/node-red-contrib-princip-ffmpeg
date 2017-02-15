@@ -5,7 +5,6 @@ module.exports = function(RED) {
     RED.nodes.createNode(this, config);
 
     this.inputFormat = config.inputFormat || '';
-    this.inputFramerate = config.inputFramerate || '30';
     this.inputParamsString = config.inputParamsString || '';
     this.inputSource = config.inputSource;
     this.outputParamsString = config.outputParamsString || '';

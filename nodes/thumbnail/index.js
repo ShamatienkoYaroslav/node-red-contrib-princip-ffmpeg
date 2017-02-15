@@ -24,7 +24,8 @@ module.exports = function(RED) {
       var processes = utils.getProcesses(node);
 
       node.params.outputFormat = 'image2pipe';
-      node.params.outputParamsString = (!node.params.outputParamsString) ? '-frames 1' : node.params.outputParamsString + ' ' + '-frames 1';
+      node.params.outputParamsString = node.params.outputParamsString.replace('-t 1', '').replace(/(^\s+|\s+$)/g, "");
+      node.params.outputParamsString = (!node.params.outputParamsString) ? '-t 1' : node.params.outputParamsString + ' -t 1';
       node.params.onProcessClose = function(buffer) {
         var processes = utils.getProcesses(node);
         utils.setProcesses(node, processes);
