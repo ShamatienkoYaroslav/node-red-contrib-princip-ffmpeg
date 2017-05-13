@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-princip-ffmpeg",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -32,6 +32,6 @@
   },
   "homepage": "https://github.com/ShamatienkoYaroslav/node-red-contrib-princip-ffmpeg#readme",
   "dependencies": {
-    "princip-ffmpeg-stream-to-buffer": "0.1.1"
+    "princip-ffmpeg-stream-to-buffer": "s0.1.2"
   }
 }

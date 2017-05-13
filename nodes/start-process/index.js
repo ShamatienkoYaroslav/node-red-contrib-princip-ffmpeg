@@ -23,6 +23,8 @@ module.exports = function(RED) {
 
       var processes = utils.getProcesses(node);
 
+      utils.updateInputParamsString(node);
+
       try {
         var proc = pfstb.stream(node.params);
         processes.push({params: node.params, proc: proc});

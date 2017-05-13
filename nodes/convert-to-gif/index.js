@@ -37,6 +37,7 @@ module.exports = function(RED) {
 
       var speed = `-filter:v setpts=${node.params.speed}*PTS`;
 
+      utils.updateInputParamsString(node);
       node.params.outputFormat = 'gif';
       node.params.outputParamsString = (!node.params.outputParamsString) ? speed : node.params.outputParamsString + ' ' + speed;
       node.params.onProcessClose = function(buffer) {

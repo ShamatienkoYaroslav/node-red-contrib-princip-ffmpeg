@@ -23,6 +23,7 @@ module.exports = function(RED) {
 
       var processes = utils.getProcesses(node);
 
+      utils.updateInputParamsString(node);
       node.params.outputFormat = 'image2pipe';
       node.params.outputParamsString = node.params.outputParamsString.replace('-t 1', '').replace(/(^\s+|\s+$)/g, "");
       node.params.outputParamsString = (!node.params.outputParamsString) ? '-t 1' : node.params.outputParamsString + ' -t 1';

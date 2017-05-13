@@ -32,5 +32,10 @@ module.exports = {
 
   setProcesses: function(node, processes) {
     node.context().global.set('princip-ffmpeg-processes', processes);
+  },
+
+  updateInputParamsString: function(node) {
+    node.params.inputParamsString = node.params.inputParamsString.replace('-loglevel quiet', '').replace(/(^\s+|\s+$)/g, "");
+    node.params.inputParamsString = (!node.params.inputParamsString) ? '-loglevel quiet' : node.params.inputParamsString + ' -loglevel quiet';
   }
 }
