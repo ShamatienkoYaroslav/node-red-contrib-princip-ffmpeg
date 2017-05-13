@@ -32,6 +32,6 @@
   },
   "homepage": "https://github.com/ShamatienkoYaroslav/node-red-contrib-princip-ffmpeg#readme",
   "dependencies": {
-    "princip-ffmpeg-stream-to-buffer": "s0.1.2"
+    "princip-ffmpeg-stream-to-buffer": "0.1.2"
   }
 }
